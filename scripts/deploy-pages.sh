@@ -6,6 +6,8 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
+# Windows 的 Git Bash 会把 "/polanaluz/" 这类值改写成 Windows 路径，这里关掉
+export MSYS_NO_PATHCONV=1
 POLANALUZ_BASE=/polanaluz/ npm run build
 
 OUT=dist/studio
