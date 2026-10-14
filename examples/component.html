@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN" data-mode="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polanaluz 组件示例</title>
+    <style>
+      /* 背景色放在 html 上（body 的背景会盖住 z-index 更低的层） */
+      html { background: #111214; color: #edeef0; font-family: system-ui, "PingFang SC", "Microsoft YaHei UI", sans-serif; }
+      html[data-mode="light"] { background: #f6f6f3; color: #15171c; }
+      body { margin: 0; }
+
+      /* 首屏：光影铺满整个首屏，内容压在上面 */
+      .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 0 16px; }
+      .hero polana-luz { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+      .hero > :not(polana-luz) { position: relative; z-index: 1; }
+
+      .nav { align-self: stretch; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; }
+      .nav b { font-size: 20px; }
+      .nav button { font: inherit; padding: 6px 12px; border-radius: 999px; border: 1px solid currentColor; background: transparent; color: inherit; cursor: pointer; }
+      h1 { font-size: clamp(28px, 4.2vw, 56px); margin: 18vh 0 40px; text-align: center; }
+      #search-box {
+        width: min(880px, 100%); height: 170px; border-radius: 18px; padding: 24px 28px; box-sizing: border-box;
+        border: 1.5px solid currentColor; font-size: 18px; opacity: 0.95;
+        background: color-mix(in oklab, #ffffff 86%, transparent); color: #5d626b;
+      }
+      html[data-mode="dark"] #search-box { background: color-mix(in oklab, #1a1b1e 86%, transparent); color: #9a9ea6; }
+      .below { padding: 80px 16px; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <!--
+        polanaluz.json / polanaluz-dark.webp / polanaluz-light.webp 是生成器"导出 → 接入包"得到的三个文件。
+        theme 默认 auto：跟随 <html data-mode>，没有就跟随系统。
+      -->
+      <polana-luz
+        config-url="polanaluz.json"
+        poster-dark="polanaluz-dark.webp"
+        poster-light="polanaluz-light.webp"
+        focus="#search-box"
+      ></polana-luz>
+      <nav class="nav">
+        <b>aiknow</b>
+        <button type="button" id="mode">切换深浅</button>
+      </nav>
+      <h1>说出你的需求，AI 帮你挑好工具</h1>
+      <div id="search-box">试试：一句话生成 PPT</div>
+    </section>
+    <section class="below">首屏以下是正常的页面内容。</section>
+
+    <script src="../dist/lib/polanaluz.min.js"></script>
+    <script>
+      document.getElementById("mode").onclick = () => {
+        const h = document.documentElement;
+        h.dataset.mode = h.dataset.mode === "dark" ? "light" : "dark";
+      };
+    </script>
+  </body>
+</html>

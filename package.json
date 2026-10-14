@@ -1,0 +1,43 @@
+{
+  "name": "polanaluz",
+  "version": "0.1.0",
+  "description": "Stained-glass light backgrounds for the web: Windows-wallpaper-style volumetric beams through stained glass, in a tiny zero-dependency WebGL2 library.",
+  "license": "MIT",
+  "author": "nwnuyhs (https://github.com/nwnuyhs)",
+  "homepage": "https://nwnuyhs.github.io/polanaluz/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nwnuyhs/polanaluz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nwnuyhs/polanaluz/issues"
+  },
+  "keywords": [
+    "webgl",
+    "webgl2",
+    "background",
+    "hero",
+    "stained-glass",
+    "light",
+    "volumetric",
+    "god-rays",
+    "shader",
+    "web-component",
+    "windows-wallpaper"
+  ],
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build && vite build -c vite.lib.config.ts && tsc -p tsconfig.lib.json",
+    "build:lib": "vite build -c vite.lib.config.ts && tsc -p tsconfig.lib.json",
+    "typecheck": "tsc --noEmit",
+    "deploy": "bash scripts/deploy-pages.sh"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "lil-gui": "^0.20.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.4"
+  }
+}

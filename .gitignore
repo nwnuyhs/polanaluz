@@ -1,0 +1,9 @@
+node_modules
+dist
+.snapshots
+.claude
+
+# 原始素材与内部文档不进仓库（README 用到的图在 docs/images）
+*.mp4
+reference/
+方案.md

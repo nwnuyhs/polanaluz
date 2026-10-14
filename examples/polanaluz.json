@@ -1,0 +1,209 @@
+{
+  "name": "polanaluz",
+  "version": 1,
+  "style": "stained-rays-rl",
+  "dark": {
+    "theme": "dark",
+    "seed": 5,
+    "sun": {
+      "azimuth": 15,
+      "elevation": 3,
+      "intensity": 1.6,
+      "temperature": 5600,
+      "softness": 0.4
+    },
+    "windows": [
+      {
+        "enabled": true,
+        "mount": "side",
+        "kind": "panes",
+        "shape": "rect",
+        "x": 0.88,
+        "y": 0.46,
+        "distance": 9,
+        "width": 2.2,
+        "height": 2.2,
+        "facing": 0,
+        "slope": 0,
+        "count": 2,
+        "segments": 2,
+        "fill": 0.55,
+        "frame": 0.35,
+        "pieces": 3,
+        "spread": 24,
+        "gain": 1,
+        "seed": 1
+      }
+    ],
+    "palette": {
+      "colors": [
+        "#5b3df5",
+        "#b136e0",
+        "#ff3f86",
+        "#ff9f1c",
+        "#1fa8ff",
+        "#7a5cff"
+      ],
+      "weights": [
+        3,
+        2.5,
+        2.5,
+        1.6,
+        1.4,
+        2
+      ],
+      "white": 0.06,
+      "saturation": 1.1
+    },
+    "camera": {
+      "tilt": 82,
+      "yaw": 16,
+      "zoom": 1
+    },
+    "surface": {
+      "background": "#111214",
+      "texture": "none",
+      "textureScale": 0.35,
+      "textureStrength": 0.35
+    },
+    "look": {
+      "opacity": 1,
+      "exposure": 1.2,
+      "glow": 0.2,
+      "caustics": 0.3,
+      "shade": 0.05,
+      "fade": 0.1,
+      "vignette": 0.2,
+      "grain": 0
+    },
+    "focus": {
+      "lift": 0.22,
+      "shadow": 0.85,
+      "rim": 1.1,
+      "rimWidth": 8,
+      "inside": 0.12
+    },
+    "scene": {
+      "mode": "room",
+      "wallDistance": 5,
+      "sideWall": 4.5,
+      "roomColor": "#262a5c",
+      "ambient": 0.35,
+      "haze": 0.42,
+      "windowGlow": 0.9,
+      "bottomFade": 0.15,
+      "panel": 1.8,
+      "gloss": 0.35,
+      "floor": false,
+      "dust": 0.6
+    },
+    "motion": {
+      "mode": "drift",
+      "speed": 1,
+      "amount": 0.6,
+      "clouds": 0.25
+    }
+  },
+  "light": {
+    "theme": "light",
+    "seed": 5,
+    "sun": {
+      "azimuth": 15,
+      "elevation": 3,
+      "intensity": 2.6,
+      "temperature": 5600,
+      "softness": 0.4
+    },
+    "windows": [
+      {
+        "enabled": true,
+        "mount": "side",
+        "kind": "panes",
+        "shape": "rect",
+        "x": 0.88,
+        "y": 0.46,
+        "distance": 9,
+        "width": 2.2,
+        "height": 2.2,
+        "facing": 0,
+        "slope": 0,
+        "count": 2,
+        "segments": 2,
+        "fill": 0.55,
+        "frame": 0.35,
+        "pieces": 3,
+        "spread": 24,
+        "gain": 1,
+        "seed": 1
+      }
+    ],
+    "palette": {
+      "colors": [
+        "#5b3df5",
+        "#b136e0",
+        "#ff3f86",
+        "#ff9f1c",
+        "#1fa8ff",
+        "#7a5cff"
+      ],
+      "weights": [
+        3,
+        2.5,
+        2.5,
+        1.6,
+        1.4,
+        2
+      ],
+      "white": 0.06,
+      "saturation": 1.35
+    },
+    "camera": {
+      "tilt": 82,
+      "yaw": 16,
+      "zoom": 1
+    },
+    "surface": {
+      "background": "#f6f6f3",
+      "texture": "none",
+      "textureScale": 0.6,
+      "textureStrength": 0.35
+    },
+    "look": {
+      "opacity": 1,
+      "exposure": 1.05,
+      "glow": 0.2,
+      "caustics": 0.3,
+      "shade": 0.06,
+      "fade": 0.1,
+      "vignette": 0.04,
+      "grain": 0
+    },
+    "focus": {
+      "lift": 0.22,
+      "shadow": 0.85,
+      "rim": 1.1,
+      "rimWidth": 8,
+      "inside": 0.12
+    },
+    "scene": {
+      "mode": "room",
+      "wallDistance": 5,
+      "sideWall": 4.5,
+      "roomColor": "#bdb5ec",
+      "ambient": 0.85,
+      "haze": 1.4,
+      "windowGlow": 1,
+      "bottomFade": 0.18,
+      "panel": 1.8,
+      "gloss": 0.25,
+      "floor": false,
+      "dust": 0.6
+    },
+    "motion": {
+      "mode": "drift",
+      "speed": 1,
+      "amount": 0.6,
+      "clouds": 0.25
+    }
+  }
+}

@@ -1,0 +1,48 @@
+name: Deploy demo to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          POLANALUZ_BASE: /polanaluz/
+      # 在线演示里也放上核心库和示例，方便直接引用、查看
+      - run: |
+          mkdir -p dist/studio/lib dist/studio/examples
+          cp -r dist/lib/* dist/studio/lib/
+          cp examples/*.html examples/*.json examples/*.webp dist/studio/examples/
+          sed -i 's#\.\./dist/lib/#../lib/#g' dist/studio/examples/*.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/studio
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
