@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polanaluz · Stained-glass light generator</title>
+    <meta name="description" content="Polanaluz: stained-glass light backgrounds for the web — Windows-wallpaper-style volumetric beams in a tiny zero-dependency WebGL2 library. By aiknow.cc and hunt.now." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2 L27 30 H5 Z' fill='%23161310'/><path d='M13 9h2v18h-2z' fill='%23e5262b'/><path d='M15 9h2v18h-2z' fill='%23f5c445'/><path d='M17 9h2v18h-2z' fill='%232dc68b'/></svg>" />
+    <script type="module" crossorigin src="/polanaluz/assets/index-B1NLVapt.js"></script>
+    <link rel="stylesheet" crossorigin href="/polanaluz/assets/index-BdytLoX8.css">
+  </head>
+  <body>
+    <canvas id="stage" aria-label="Preview"></canvas>
+
+    <!-- 网页模拟：叠一个 aiknow 首屏，看作为背景的效果 -->
+    <div id="mock" aria-hidden="true">
+      <header class="mock-nav">
+        <span class="mock-logo">ai<b>know</b></span>
+        <span class="mock-links"><i data-en="Sponsor">赞助</i><i class="solid" data-en="Submit">提交工具</i><i data-en="Saved">收藏</i><i data-en="中文">EN</i></span>
+      </header>
+      <section class="mock-hero">
+        <span class="mock-badge" data-en="● <b>4,121</b> sites indexed · updated daily">● 已收录 <b>4,121</b> 个站点 · 每天更新</span>
+        <h1 data-en="Describe your need, <span>AI finds the right tools</span>">说出你的需求，<span>AI 帮你挑好工具</span></h1>
+        <p data-en="AI assistants, models, agents and open-source projects, hand-picked and updated daily.<br />No leaderboards, no spec sheets — just ask.">AI 助手、大模型、Agent、开源项目，逐一精选，持续更新。<br />不用翻榜单，不用比参数，像聊天一样问一句。</p>
+        <div class="mock-search" id="mock-search">
+          <span class="ph" data-en="Try: slides from a single sentence">试试：一句话生成 PPT</span>
+          <span class="chips"><i data-en="✦ AI pick">✦ AI 挑选</i><i data-en="+ Open source">+ 开源</i><i data-en="+ Free">+ 免费</i><i data-en="+ Has API">+ 有 API</i></span>
+          <span class="go" data-en="Search">搜索</span>
+        </div>
+      </section>
+    </div>
+
+
+    <nav id="bar">
+      <strong class="brand">Polanaluz</strong>
+      <label class="field"><span data-en="Style">样式</span>
+        <select id="style"></select>
+      </label>
+      <div class="seg" role="group" aria-label="Theme">
+        <button type="button" data-theme="dark" data-en="Dark">深色</button>
+        <button type="button" data-theme="light" data-en="Light">浅色</button>
+      </div>
+      <button type="button" id="play" title="播放 / 暂停（空格）" data-title-en="Play / pause (Space)">❚❚</button>
+      <button type="button" id="shuffle" title="换一组玻璃颜色（R）" data-title-en="Shuffle glass colors (R)" data-en="🎲 Shuffle">🎲 随机</button>
+      <button type="button" id="toggle-mock" aria-pressed="false" data-en="Page mockup">网页模拟</button>
+      <div class="menu">
+        <button type="button" id="export" aria-haspopup="menu" aria-expanded="false" data-en="Export ▾">导出 ▾</button>
+        <div id="export-menu" role="menu" hidden>
+          <button type="button" role="menuitem" data-export="bundle" data-en="<b>Bundle</b><small>config JSON + dark &amp; light WebP posters</small>"><b>接入包</b><small>配置 JSON + 深浅两张静态 WebP</small></button>
+          <button type="button" role="menuitem" data-export="webp" data-en="<b>Static WebP</b><small>dark + light, 1920×1080</small>"><b>静态图 WebP</b><small>深色 + 浅色，1920×1080</small></button>
+          <button type="button" role="menuitem" data-export="json" data-en="<b>Config JSON</b><small>dark + light settings</small>"><b>配置 JSON</b><small>深色 + 浅色两版参数</small></button>
+          <button type="button" role="menuitem" data-export="copy" data-en="<b>Copy config</b><small>to clipboard</small>"><b>复制配置</b><small>到剪贴板</small></button>
+          <button type="button" role="menuitem" data-export="png" data-en="<b>Current frame PNG</b><small>screen size × 2</small>"><b>当前画面 PNG</b><small>屏幕尺寸 × 2</small></button>
+        </div>
+      </div>
+      <button type="button" id="reset" title="恢复当前样式的默认参数" data-title-en="Restore this style's defaults" data-en="Reset">重置</button>
+      <button type="button" id="lang" title="中文 / English">EN</button>
+    </nav>
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <footer id="credit">
+      <span data-en="Made by">出品</span>
+      <a href="https://www.aiknow.cc/?ref=polanaluz" target="_blank" rel="noopener">aiknow.cc</a>
+      <span class="sub" data-en="AI tools search">AI 工具搜索</span>
+      ·
+      <a href="https://www.hunt.now/?ref=polanaluz" target="_blank" rel="noopener">hunt.now</a>
+      <span class="sub" data-en="design resources search">设计资源搜索</span>
+      ·
+      <a href="https://github.com/nwnuyhs/polanaluz" target="_blank" rel="noopener">GitHub</a>
+    </footer>
+
+  </body>
+</html>
