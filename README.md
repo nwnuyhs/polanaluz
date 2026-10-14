@@ -171,6 +171,7 @@ The name comes from the **Igreja de Santo António da Polana** in Maputo, Mozamb
 npm install
 npm run dev     # generator at http://localhost:5190
 npm run build   # type check + generator (dist/studio) + library (dist/lib, dist/lib/types)
+npm run deploy  # build the demo and publish it to the gh-pages branch
 ```
 
 The generator has a Chinese / English switch. Its state lives in the URL hash, so a link reproduces a look exactly.

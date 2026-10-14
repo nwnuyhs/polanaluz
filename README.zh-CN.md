@@ -171,6 +171,7 @@ light.destroy();
 npm install
 npm run dev     # 生成器：http://localhost:5190
 npm run build   # 类型检查 + 生成器（dist/studio）+ 核心库（dist/lib、dist/lib/types）
+npm run deploy  # 构建在线演示并发布到 gh-pages 分支
 ```
 
 生成器界面可以切换中文和英文。所有参数都写在地址栏的 hash 里，复制链接就能还原同一个效果。
